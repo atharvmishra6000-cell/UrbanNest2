@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UrbanNest Realty Consultants — Premium Real Estate in Mumbai & Pune</title>
+<meta name="description" content="UrbanNest Realty Consultants — premium residential, commercial, and investment property advisory across Mumbai & Pune.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --black:#0A0A0A;
+    --slate:#6B7280;
+    --royal:#2563EB;
+    --sky:#38BDF8;
+    --mist:#F6F7F9;
+    --mist-2:#EEF0F4;
+    --line:rgba(10,10,10,0.08);
+    --line-strong:rgba(10,10,10,0.14);
+    --blue-grad:linear-gradient(135deg,#2563EB 0%,#38BDF8 100%);
+    --shadow-sm:0 1px 2px rgba(10,10,10,.05),0 4px 14px rgba(10,10,10,.05);
+    --shadow-md:0 10px 30px rgba(10,10,10,.08),0 4px 10px rgba(10,10,10,.04);
+    --shadow-lg:0 30px 70px rgba(10,10,10,.14),0 10px 24px rgba(10,10,10,.08);
+    --r-sm:14px; --r-md:20px; --r-lg:28px; --r-xl:36px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --maxw:1200px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--black);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:rgba(37,99,235,.18)}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.02em}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--royal);display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--royal);display:inline-block;opacity:.6}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:'Inter';font-size:15px;font-weight:600;cursor:pointer;border:none;
+    padding:15px 26px;border-radius:999px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s,border-color .3s;
+    white-space:nowrap;line-height:1;
+  }
+  .btn-primary{background:var(--royal);color:#fff;box-shadow:0 8px 24px rgba(37,99,235,.30)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(37,99,235,.42)}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px)}
+  .btn-ghost:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+  .btn-dark{background:var(--black);color:#fff}
+  .btn-dark:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .btn-outline{background:transparent;color:var(--black);border:1px solid var(--line-strong)}
+  .btn-outline:hover{border-color:var(--black);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .4s var(--ease),box-shadow .4s var(--ease),border-color .4s,padding .4s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;transition:padding .4s var(--ease)}
+  header.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:blur(18px) saturate(160%);box-shadow:0 1px 0 rgba(10,10,10,.06),0 8px 30px rgba(10,10,10,.05);border-bottom-color:var(--line)}
+  header.nav.scrolled .nav-inner{padding:14px 28px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces';font-weight:600;font-size:21px;letter-spacing:-.02em;color:#fff;transition:color .4s}
+  header.nav.scrolled .brand{color:var(--black)}
+  .brand .mark{width:34px;height:34px;border-radius:9px;background:var(--blue-grad);display:grid;place-items:center;box-shadow:0 6px 16px rgba(37,99,235,.35);flex:none}
+  .brand .mark svg{width:18px;height:18px;color:#fff}
+  .brand b{font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a.lnk{font-size:15px;font-weight:500;color:rgba(255,255,255,.85);transition:color .3s;position:relative}
+  .nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--royal);transition:width .3s var(--ease)}
+  .nav-links a.lnk:hover{color:#fff}.nav-links a.lnk:hover::after{width:100%}
+  header.nav.scrolled .nav-links a.lnk{color:var(--slate)}
+  header.nav.scrolled .nav-links a.lnk:hover{color:var(--black)}
+  .nav-cta{padding:12px 22px;font-size:14px}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;width:42px;height:42px;align-items:center;justify-content:center}
+  .menu-btn span{display:block;width:22px;height:2px;background:#fff;position:relative;transition:background .4s}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#fff;transition:transform .35s var(--ease)}
+  .menu-btn span::before{top:-7px}.menu-btn span::after{top:7px}
+  header.nav.scrolled .menu-btn span,header.nav.scrolled .menu-btn span::before,header.nav.scrolled .menu-btn span::after{background:var(--black)}
+  body.menu-open .menu-btn span{background:transparent}
+  body.menu-open .menu-btn span::before{transform:translateY(7px) rotate(45deg)}
+  body.menu-open .menu-btn span::after{transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,#0a0f1f,#0a0a0a)}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:opacity 1.6s var(--ease),transform 7s linear}
+  .hero-slide.active{opacity:1;transform:scale(1)}
+  .hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(10,10,10,.88) 0%,rgba(10,12,20,.66) 42%,rgba(10,10,10,.34) 100%)}
+  .hero-veil::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.7),transparent 36%)}
+  .hero-inner{position:relative;z-index:2;width:100%;padding-top:120px;padding-bottom:60px}
+  .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px);color:#fff;font-size:13px;font-weight:500;padding:9px 16px;border-radius:999px;margin-bottom:26px}
+  .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--sky);box-shadow:0 0 0 4px rgba(56,189,248,.25)}
+  .hero h1{color:#fff;font-size:clamp(40px,6.2vw,78px);font-weight:600;max-width:15ch;letter-spacing:-.025em}
+  .hero h1 .accent{background:var(--blue-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
+  .hero p.lede{color:rgba(255,255,255,.82);font-size:clamp(16px,1.6vw,20px);max-width:54ch;margin-top:26px;line-height:1.65}
+  .hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+  .hero-foot{display:flex;align-items:center;gap:30px;margin-top:56px;flex-wrap:wrap}
+  .hero-foot .mini{color:rgba(255,255,255,.7);font-size:13.5px;display:flex;align-items:center;gap:9px}
+  .hero-foot .mini svg{width:17px;height:17px;color:var(--sky)}
+  .hero-dots{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:9px}
+  .hero-dots button{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;transition:width .4s var(--ease),background .4s}
+  .hero-dots button.active{width:26px;border-radius:999px;background:#fff}
+
+  /* ---------- Section base ---------- */
+  .sec{padding:120px 0;position:relative}
+  .sec-mist{background:var(--mist)}
+  .sec-head{max-width:680px;margin-bottom:56px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(32px,4.4vw,52px);margin-top:18px;letter-spacing:-.025em}
+  .sec-head p{color:var(--slate);font-size:17.5px;margin-top:18px;line-height:1.7}
+
+  /* ---------- Stats ---------- */
+  .stats{background:var(--black);color:#fff;padding:96px 0;position:relative;overflow:hidden}
+  .stats::before{content:"";position:absolute;top:-40%;right:-10%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.30),transparent 65%);filter:blur(20px)}
+  .stats::after{content:"";position:absolute;bottom:-50%;left:-8%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.18),transparent 65%);filter:blur(20px)}
+  .stats-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .stat{padding:6px 4px}
+  .stat .num{font-family:'Fraunces';font-size:clamp(38px,4.6vw,58px);font-weight:600;letter-spacing:-.03em;line-height:1;background:var(--blue-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .lbl{color:rgba(255,255,255,.62);font-size:14.5px;margin-top:14px;font-weight:500}
+  .stat .bar{width:38px;height:3px;border-radius:3px;background:var(--blue-grad);margin-top:18px}
+
+  /* ---------- Properties ---------- */
+  .city-row{display:flex;align-items:baseline;gap:16px;margin:60px 0 28px}
+  .city-row:first-of-type{margin-top:0}
+  .city-row h3{font-size:clamp(24px,3vw,32px);font-weight:600}
+  .city-row .count{color:var(--slate);font-size:14px;font-weight:500}
+  .city-row .rule{flex:1;height:1px;background:var(--line)}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;
+    transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s;
+    display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
+  .card-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--mist-2)}
+  .card-img .ph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .9s var(--ease)}
+  .card:hover .card-img .ph{transform:scale(1.07)}
+  .card-img .fallback{position:absolute;inset:0;display:none;place-items:center;color:rgba(255,255,255,.85);font-family:'Fraunces';font-size:15px;letter-spacing:.02em}
+  .card-badge{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);color:var(--black);font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:7px 13px;border-radius:999px;box-shadow:var(--shadow-sm)}
+  .card-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+  .card-body h4{font-size:21px;font-weight:600;letter-spacing:-.01em}
+  .card-loc{display:flex;align-items:center;gap:7px;color:var(--slate);font-size:14px;margin-top:9px}
+  .card-loc svg{width:15px;height:15px;color:var(--royal);flex:none}
+  .card-foot{display:flex;align-items:flex-end;justify-content:space-between;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+  .card-price .k{font-size:12px;color:var(--slate);font-weight:500;display:block;margin-bottom:3px}
+  .card-price .v{font-family:'Fraunces';font-size:22px;font-weight:600;letter-spacing:-.02em}
+  .learn{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--royal);transition:gap .3s var(--ease)}
+  .learn svg{width:15px;height:15px;transition:transform .3s var(--ease)}
+  .card:hover .learn{gap:10px}.card:hover .learn svg{transform:translateX(3px)}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .about-copy p{color:var(--slate);font-size:17px;line-height:1.8;margin-top:20px}
+  .about-visual{position:relative}
+  .about-visual .frame{aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--mist-2)}
+  .about-visual .frame .ph{position:absolute;inset:0;background-size:cover;background-position:center}
+  .about-visual .float{position:absolute;left:-26px;bottom:42px;background:#fff;border-radius:var(--r-md);box-shadow:var(--shadow-lg);padding:22px 24px;display:flex;align-items:center;gap:16px;max-width:260px}
+  .about-visual .float .ic{width:46px;height:46px;border-radius:12px;background:var(--blue-grad);display:grid;place-items:center;flex:none}
+  .about-visual .float .ic svg{width:22px;height:22px;color:#fff}
+  .about-visual .float .t{font-family:'Fraunces';font-size:24px;font-weight:600;line-height:1}
+  .about-visual .float .s{color:var(--slate);font-size:13px;margin-top:4px}
+
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:80px}
+  .why-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:30px;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s}
+  .why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
+  .why-card .ic{width:50px;height:50px;border-radius:13px;background:rgba(37,99,235,.08);display:grid;place-items:center;margin-bottom:20px;transition:background .4s}
+  .why-card:hover .ic{background:var(--blue-grad)}
+  .why-card .ic svg{width:24px;height:24px;color:var(--royal);transition:color .4s}
+  .why-card:hover .ic svg{color:#fff}
+  .why-card h4{font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .why-card p{color:var(--slate);font-size:14.5px;margin-top:10px;line-height:1.65}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:start}
+  .info-block{margin-top:30px}
+  .info-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .info-item:last-child{border-bottom:none}
+  .info-item .ic{width:46px;height:46px;border-radius:12px;background:var(--mist);display:grid;place-items:center;flex:none}
+  .info-item .ic svg{width:20px;height:20px;color:var(--royal)}
+  .info-item .k{font-size:12.5px;color:var(--slate);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  .info-item .v{font-size:16px;font-weight:500;margin-top:4px;line-height:1.5}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:38px;box-shadow:var(--shadow-md)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .field{margin-bottom:18px}
+  .field.full{grid-column:1/-1}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:#2b2f36}
+  .field label .req{color:var(--royal)}
+  .field input,.field select,.field textarea{
+    width:100%;font-family:'Inter';font-size:15px;color:var(--black);
+    padding:14px 16px;border:1px solid var(--line-strong);border-radius:12px;background:#fff;
+    transition:border-color .3s,box-shadow .3s;
+  }
+  .field textarea{resize:vertical;min-height:110px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--royal);box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+  .field input.invalid,.field select.invalid,.field textarea.invalid{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220,38,38,.10)}
+  .err{color:#dc2626;font-size:12.5px;margin-top:6px;display:none}
+  .err.show{display:block}
+  .form-note{font-size:13px;color:var(--slate);margin-top:6px;text-align:center}
+  .form-ok{display:none;background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.2);color:#1d4ed8;border-radius:12px;padding:14px 16px;font-size:14.5px;font-weight:500;margin-bottom:18px}
+  .form-ok.show{display:block}
+
+  /* ---------- Portal / Login ---------- */
+  .portal{position:relative;padding:120px 0;background:linear-gradient(135deg,#0a0f22 0%,#0a0a0a 60%);overflow:hidden}
+  .portal-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.22}
+  .portal::before{content:"";position:absolute;top:-30%;left:-10%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.45),transparent 65%);filter:blur(10px)}
+  .portal::after{content:"";position:absolute;bottom:-35%;right:-8%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.30),transparent 65%);filter:blur(10px)}
+  .portal-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .portal-copy .eyebrow{color:var(--sky)}.portal-copy .eyebrow::before{background:var(--sky)}
+  .portal-copy h2{color:#fff;font-size:clamp(30px,4vw,46px);margin-top:18px}
+  .portal-copy p{color:rgba(255,255,255,.72);font-size:17px;margin-top:18px;line-height:1.7;max-width:46ch}
+  .portal-perks{list-style:none;margin-top:28px;display:grid;gap:14px}
+  .portal-perks li{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.85);font-size:15px}
+  .portal-perks li svg{width:19px;height:19px;color:var(--sky);flex:none}
+  .glass{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--r-xl);padding:40px;backdrop-filter:blur(22px) saturate(150%);
+    box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.12);
+  }
+  .glass h3{color:#fff;font-size:26px;font-weight:600}
+  .glass .sub{color:rgba(255,255,255,.6);font-size:14.5px;margin-top:8px;margin-bottom:26px}
+  .gfield{margin-bottom:18px}
+  .gfield label{display:block;color:rgba(255,255,255,.8);font-size:13px;font-weight:600;margin-bottom:8px}
+  .gfield input{width:100%;font-family:'Inter';font-size:15px;color:#fff;padding:14px 16px;border:1px solid rgba(255,255,255,.2);border-radius:12px;background:rgba(255,255,255,.06);transition:border-color .3s,box-shadow .3s}
+  .gfield input::placeholder{color:rgba(255,255,255,.4)}
+  .gfield input:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 4px rgba(56,189,248,.18)}
+  .grow{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+  .remember{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.78);font-size:14px;cursor:pointer;user-select:none}
+  .remember input{width:17px;height:17px;accent-color:var(--sky);cursor:pointer}
+  .forgot{color:var(--sky);font-size:14px;font-weight:500}
+  .forgot:hover{text-decoration:underline}
+  .btn-login{width:100%;background:var(--blue-grad);color:#fff;box-shadow:0 10px 30px rgba(37,99,235,.4)}
+  .btn-login:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(37,99,235,.5)}
+  .glass-div{display:flex;align-items:center;gap:14px;margin:24px 0;color:rgba(255,255,255,.45);font-size:13px}
+  .glass-div::before,.glass-div::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.16)}
+  .glass-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .btn-glass-2{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22);font-size:14px;padding:13px 16px}
+  .btn-glass-2:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--black);color:#fff;padding:80px 0 36px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1.3fr;gap:54px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-brand .brand{color:#fff;margin-bottom:18px}
+  .foot-brand p{color:rgba(255,255,255,.58);font-size:14.5px;line-height:1.7;max-width:36ch}
+  .foot-social{display:flex;gap:11px;margin-top:24px}
+  .foot-social a{width:42px;height:42px;border-radius:11px;border:1px solid rgba(255,255,255,.15);display:grid;place-items:center;transition:background .3s,transform .3s,border-color .3s}
+  .foot-social a:hover{background:var(--royal);border-color:var(--royal);transform:translateY(-3px)}
+  .foot-social a svg{width:18px;height:18px;color:#fff}
+  .foot-col h5{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px}
+  .foot-col a,.foot-col p{display:block;color:rgba(255,255,255,.75);font-size:14.5px;margin-bottom:13px;transition:color .3s;line-height:1.55}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{padding-top:30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+  .foot-bottom p{color:rgba(255,255,255,.5);font-size:13.5px}
+  .foot-bottom .links{display:flex;gap:24px}
+  .foot-bottom .links a{color:rgba(255,255,255,.5);font-size:13.5px;transition:color .3s}
+  .foot-bottom .links a:hover{color:#fff}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+
+  /* ---------- Mobile ---------- */
+  @media(max-width:1024px){
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:40px 28px}
+    .grid-3{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .about-grid,.contact-grid,.portal-inner{grid-template-columns:1fr;gap:44px}
+    .about-visual{max-width:480px;margin:0 auto}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 20px}
+    .sec{padding:84px 0}
+    .nav-links{position:fixed;inset:0 0 0 auto;width:min(82vw,340px);background:#fff;flex-direction:column;align-items:flex-start;justify-content:center;padding:40px;gap:26px;transform:translateX(100%);transition:transform .45s var(--ease);box-shadow:-20px 0 60px rgba(0,0,0,.18)}
+    body.menu-open .nav-links{transform:none}
+    .nav-links a.lnk{color:var(--black);font-size:20px;font-family:'Fraunces'}
+    .nav-links .nav-cta{width:100%}
+    .menu-btn{display:flex;z-index:120}
+    .grid-3,.why-grid,.form-row,.glass-actions,.foot-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:34px 22px}
+    .hero-actions .btn{flex:1}
+    .about-visual .float{left:0}
+    .form-card,.glass{padding:26px}
+    .foot-bottom{flex-direction:column;align-items:flex-start}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition-duration:.001s!important;scroll-behavior:auto!important}
+    .hero-slide{transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+      <span>Urban<b>Nest</b></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="lnk">Home</a>
+      <a href="#about" class="lnk">About Us</a>
+      <a href="#contact" class="lnk">Contact Us</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Schedule Consultation</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-inner wrap">
+    <span class="hero-badge"><span class="dot"></span>Trusted advisory · Mumbai & Pune</span>
+    <h1>Discover premium real estate <span class="accent">opportunities</span> in Mumbai &amp; Pune</h1>
+    <p class="lede">Helping families, investors, and businesses find exceptional properties with expert guidance and complete transparency.</p>
+    <div class="hero-actions">
+      <a href="#properties" class="btn btn-primary">Explore Properties
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <a href="#contact" class="btn btn-ghost">Schedule Consultation</a>
+    </div>
+    <div class="hero-foot">
+      <span class="mini"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>RERA-verified listings</span>
+      <span class="mini"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>End-to-end support</span>
+      <span class="mini"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>10+ years in market</span>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats" id="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="num" data-count="500" data-suffix="+">0</div><div class="lbl">Properties Listed</div><div class="bar"></div></div>
+      <div class="stat reveal d1"><div class="num" data-count="250" data-suffix="+">0</div><div class="lbl">Happy Clients</div><div class="bar"></div></div>
+      <div class="stat reveal d2"><div class="num" data-count="10" data-suffix="+">0</div><div class="lbl">Years Experience</div><div class="bar"></div></div>
+      <div class="stat reveal d3"><div class="num" data-prefix="₹" data-count="500" data-suffix=" Cr+">0</div><div class="lbl">Transactions Facilitated</div><div class="bar"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROPERTIES ============ -->
+<section class="sec" id="properties">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Featured Listings</span>
+      <h2>A curated selection of standout addresses</h2>
+      <p>Verified residences, commercial spaces, and investment-grade properties across two of India's most dynamic markets.</p>
+    </div>
+
+    <div class="city-row reveal">
+      <h3>Mumbai</h3><span class="count">3 featured</span><span class="rule"></span>
+    </div>
+    <div class="grid-3" id="mumbaiGrid"></div>
+
+    <div class="city-row reveal">
+      <h3>Pune</h3><span class="count">3 featured</span><span class="rule"></span>
+    </div>
+    <div class="grid-3" id="puneGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec sec-mist" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="eyebrow">About Us</span>
+        <h2 style="font-size:clamp(30px,4.2vw,48px);margin-top:18px">About UrbanNest Realty Consultants</h2>
+        <p>UrbanNest Realty Consultants is a client-focused real estate advisory firm serving Mumbai and Pune. We help homebuyers, investors, and businesses make informed property decisions through market expertise, verified listings, and personalized consultation.</p>
+        <p>Every engagement is built on transparency — from the first site visit to the final handover — so you always know exactly where you stand.</p>
+        <a href="#contact" class="btn btn-dark" style="margin-top:30px">Talk to an Advisor
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="about-visual reveal d2">
+        <div class="frame"><div class="ph" data-img="advisor"></div></div>
+        <div class="float">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.5v11L12 22 3 17.5v-11z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg></div>
+          <div><div class="t">₹500 Cr+</div><div class="s">in transactions facilitated</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head center reveal" style="margin-top:96px;margin-bottom:0">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2 style="font-size:clamp(28px,3.6vw,42px);margin-top:16px">Built around your decision, not ours</h2>
+    </div>
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">Contact Us</span>
+        <h2 style="font-size:clamp(30px,4.2vw,48px);margin-top:18px">Let's find your ideal property</h2>
+        <p style="color:var(--slate);font-size:17px;margin-top:18px;line-height:1.7">Share your requirement and one of our advisors will reach out — usually within one business day.</p>
+        <div class="info-block">
+          <div class="info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+            <div><div class="k">Phone</div><div class="v">+91 98765 43210</div></div>
+          </div>
+          <div class="info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+            <div><div class="k">Email</div><div class="v">contact@urbannestrealty.in</div></div>
+          </div>
+          <div class="info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="k">Mumbai Office</div><div class="v">Business Plaza, Bandra Kurla Complex, Mumbai</div></div>
+          </div>
+          <div class="info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="k">Pune Office</div><div class="v">Baner Road, Pune</div></div>
+          </div>
+          <div class="info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div><div class="k">Business Hours</div><div class="v">Monday – Saturday · 9:00 AM – 7:00 PM</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal d2">
+        <div class="form-ok" id="formOk">Thank you — your enquiry has been received. An advisor will be in touch shortly.</div>
+        <div class="form-row">
+          <div class="field"><label>Full Name <span class="req">*</span></label><input type="text" id="f-name" placeholder="Your name"><div class="err" id="e-name">Please enter your name.</div></div>
+          <div class="field"><label>Phone Number <span class="req">*</span></label><input type="tel" id="f-phone" placeholder="+91 ..."><div class="err" id="e-phone">Enter a valid 10-digit number.</div></div>
+        </div>
+        <div class="field full"><label>Email Address <span class="req">*</span></label><input type="email" id="f-email" placeholder="you@email.com"><div class="err" id="e-email">Enter a valid email address.</div></div>
+        <div class="form-row">
+          <div class="field"><label>Property Requirement</label>
+            <select id="f-req"><option value="">Select a type</option><option>Residential</option><option>Commercial</option><option>Luxury Apartment</option><option>Villa</option><option>Investment</option><option>Resale Assistance</option></select></div>
+          <div class="field"><label>Preferred Location</label>
+            <select id="f-loc"><option value="">Select a location</option><option>Mumbai — Worli</option><option>Mumbai — Powai</option><option>Mumbai — BKC</option><option>Pune — Baner</option><option>Pune — Kharadi</option><option>Pune — Hinjewadi</option><option>Other</option></select></div>
+        </div>
+        <div class="field full"><label>Budget Range</label>
+          <select id="f-budget"><option value="">Select a budget</option><option>Under ₹1 Cr</option><option>₹1 – 3 Cr</option><option>₹3 – 5 Cr</option><option>₹5 – 10 Cr</option><option>₹10 Cr+</option></select></div>
+        <div class="field full"><label>Message</label><textarea id="f-msg" placeholder="Tell us a little about what you're looking for..."></textarea></div>
+        <button class="btn btn-primary" id="submitBtn" style="width:100%">Send Enquiry
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg></button>
+        <p class="form-note">We respect your privacy. Your details are never shared.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTAL / LOGIN ============ -->
+<section class="portal" id="portal">
+  <div class="portal-bg" data-img="portal"></div>
+  <div class="portal-inner wrap">
+    <div class="portal-copy reveal">
+      <span class="eyebrow">Client Portal</span>
+      <h2>Your properties, schedules and reports — in one place</h2>
+      <p>Access saved properties, consultation schedules, investment reports, and exclusive listings reserved for registered clients.</p>
+      <ul class="portal-perks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Saved properties &amp; shortlists</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Consultation &amp; site-visit schedule</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Personalised investment reports</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Early access to exclusive listings</li>
+      </ul>
+    </div>
+    <div class="glass reveal d2">
+      <h3>Client Portal</h3>
+      <p class="sub">Sign in to access your account.</p>
+      <div class="gfield"><label>Email Address</label><input type="email" id="l-email" placeholder="you@email.com"></div>
+      <div class="gfield"><label>Password</label><input type="password" id="l-pass" placeholder="••••••••"></div>
+      <div class="grow">
+        <label class="remember"><input type="checkbox" id="l-remember">Remember me</label>
+        <a href="#" class="forgot" onclick="return false;">Forgot password?</a>
+      </div>
+      <button class="btn btn-login" id="loginBtn">Login</button>
+      <div class="glass-div">New to UrbanNest?</div>
+      <div class="glass-actions">
+        <a href="#" class="btn btn-glass-2" onclick="return false;">Create Account</a>
+        <a href="#contact" class="btn btn-glass-2">Schedule Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="brand">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+          <span>Urban<b>Nest</b></span>
+        </a>
+        <p>Find Better Spaces. Build Greater Futures. Premium real estate advisory across Mumbai &amp; Pune.</p>
+        <div class="foot-social">
+          <a href="#" onclick="return false;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+          <a href="#" onclick="return false;" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" onclick="return false;" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.2 0-3.5 1.5-3.5 3.6V11H8v3.5h2.5V22h3.5v-7.5h2.6l.4-3.5H14V9.4c0-.3.2-.4.5-.4z"/></svg></a>
+          <a href="#" onclick="return false;" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.5-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.3.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.3.1.6-.1 1z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Quick Links</h5>
+        <a href="#home">Home</a>
+        <a href="#properties">Featured Properties</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#portal">Client Portal</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <p>+91 98765 43210</p>
+        <p>contact@urbannestrealty.in</p>
+        <p>Business Plaza, BKC, Mumbai</p>
+        <p>Baner Road, Pune</p>
+        <p>Mon–Sat · 9 AM – 7 PM</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 UrbanNest Realty Consultants. All rights reserved.</p>
+      <div class="links"><a href="#" onclick="return false;">Privacy Policy</a><a href="#" onclick="return false;">Terms of Service</a><a href="#" onclick="return false;">RERA</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Image sources (Unsplash) with graceful fallback ---------- */
+const IMG = {
+  hero:[
+    "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=1920&q=80"
+  ],
+  advisor:"https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=80",
+  portal:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80",
+  props:{
+    worli:"https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=900&q=80",
+    powai:"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80",
+    bkc:"https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80",
+    baner:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+    kharadi:"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80",
+    hinjewadi:"https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+  }
+};
+const GRAD = "linear-gradient(135deg,#0f1b3d,#0a0a0a)";
+
+/* preload + apply background images with fallback gradient */
+function setBg(el,url){
+  const probe=new Image();
+  probe.onload=()=>{ el.style.backgroundImage=`url('${url}')`; el.classList.remove('failed'); };
+  probe.onerror=()=>{ el.style.backgroundImage=GRAD; el.classList.add('failed'); const fb=el.parentElement&&el.parentElement.querySelector('.fallback'); if(fb)fb.style.display='grid'; };
+  el.style.backgroundImage=GRAD; // base while loading / if blocked
+  probe.src=url;
+}
+
+/* ---------- Property data ---------- */
+const MUMBAI=[
+  {t:"Luxury Sea View Apartment",loc:"Worli, Mumbai",price:"₹8.5 Cr",type:"Luxury Apartment",img:"worli"},
+  {t:"Premium Residence",loc:"Powai, Mumbai",price:"₹4.2 Cr",type:"Residential",img:"powai"},
+  {t:"Commercial Office Space",loc:"BKC, Mumbai",price:"₹12 Cr",type:"Commercial",img:"bkc"}
+];
+const PUNE=[
+  {t:"Luxury Villa",loc:"Baner, Pune",price:"₹6.8 Cr",type:"Villa",img:"baner"},
+  {t:"Modern Apartment",loc:"Kharadi, Pune",price:"₹1.9 Cr",type:"Residential",img:"kharadi"},
+  {t:"IT Commercial Space",loc:"Hinjewadi, Pune",price:"₹5.5 Cr",type:"Commercial",img:"hinjewadi"}
+];
+function cardHTML(p){
+  return `<article class="card reveal">
+    <div class="card-img">
+      <span class="card-badge">${p.type}</span>
+      <div class="ph" data-prop="${p.img}"></div>
+      <div class="fallback">${p.loc}</div>
+    </div>
+    <div class="card-body">
+      <h4>${p.t}</h4>
+      <div class="card-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${p.loc}</div>
+      <div class="card-foot">
+        <div class="card-price"><span class="k">Starting from</span><span class="v">${p.price}</span></div>
+        <a href="#contact" class="learn">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </article>`;
+}
+document.getElementById('mumbaiGrid').innerHTML=MUMBAI.map(cardHTML).join('');
+document.getElementById('puneGrid').innerHTML=PUNE.map(cardHTML).join('');
+
+/* ---------- Why-choose-us ---------- */
+const WHY=[
+  {t:"Verified Properties",d:"Every listing is title-checked and RERA-verified before it reaches you.",i:'<path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 7.5-8.5 9.5C7.5 19.5 4 17 4 12V6l8-3 8 3z"/>'},
+  {t:"Transparent Transactions",d:"Clear pricing and documentation at every stage — no hidden surprises.",i:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'},
+  {t:"Local Market Expertise",d:"Deep, on-the-ground knowledge of every Mumbai and Pune micro-market.",i:'<path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'},
+  {t:"Dedicated Advisors",d:"A single point of contact who understands your goals from start to finish.",i:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'},
+  {t:"End-to-End Support",d:"From first site visit to final handover and registration, we handle it.",i:'<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>'},
+  {t:"Personalized Recommendations",d:"Curated options matched to your budget, lifestyle and investment horizon.",i:'<path d="M11 3a8 8 0 1 0 5.3 14l5 5 1.4-1.4-5-5A8 8 0 0 0 11 3z"/>'}
+];
+document.getElementById('whyGrid').innerHTML=WHY.map((w,n)=>`
+  <div class="why-card reveal d${(n%3)+1}">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${w.i}</svg></div>
+    <h4>${w.t}</h4><p>${w.d}</p>
+  </div>`).join('');
+
+/* ---------- Apply images after DOM build ---------- */
+function applyImages(){
+  // hero slides
+  const heroBg=document.getElementById('heroBg');
+  IMG.hero.forEach((url,i)=>{
+    const s=document.createElement('div'); s.className='hero-slide'+(i===0?' active':''); heroBg.appendChild(s); setBg(s,url);
+  });
+  // hero dots
+  const dots=document.getElementById('heroDots');
+  IMG.hero.forEach((_,i)=>{const b=document.createElement('button');if(i===0)b.className='active';b.onclick=()=>goSlide(i);dots.appendChild(b);});
+  // property images
+  document.querySelectorAll('[data-prop]').forEach(el=>setBg(el,IMG.props[el.dataset.prop]));
+  // tagged images
+  document.querySelectorAll('[data-img]').forEach(el=>setBg(el,IMG[el.dataset.img]));
+}
+applyImages();
+
+/* ---------- Hero slideshow ---------- */
+let slideIdx=0;const slides=()=>document.querySelectorAll('.hero-slide');const dotsEls=()=>document.querySelectorAll('.hero-dots button');
+function goSlide(n){const s=slides(),d=dotsEls();s[slideIdx].classList.remove('active');d[slideIdx].classList.remove('active');slideIdx=(n+s.length)%s.length;s[slideIdx].classList.add('active');d[slideIdx].classList.add('active');}
+const reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!reduced) setInterval(()=>goSlide(slideIdx+1),5500);
+
+/* ---------- Nav scroll state ---------- */
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+/* ---------- Mobile menu ---------- */
+const menuBtn=document.getElementById('menuBtn');
+menuBtn.addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('menu-open')));
+
+/* ---------- Reveal on scroll ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.14,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- Animated counters ---------- */
+function animateCount(el){
+  const target=+el.dataset.count,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+  const dur=1600,start=performance.now();
+  function tick(now){
+    const p=Math.min((now-start)/dur,1);const eased=1-Math.pow(1-p,3);
+    el.textContent=pre+Math.round(target*eased).toLocaleString('en-IN')+suf;
+    if(p<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);cio.unobserve(e.target);}}),{threshold:.6});
+document.querySelectorAll('.num[data-count]').forEach(el=>cio.observe(el));
+
+/* ---------- Contact form validation (front-end demo) ---------- */
+const submitBtn=document.getElementById('submitBtn');
+function setErr(id,eid,show){document.getElementById(id).classList.toggle('invalid',show);document.getElementById(eid).classList.toggle('show',show);}
+submitBtn.addEventListener('click',()=>{
+  const name=document.getElementById('f-name').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  let ok=true;
+  if(!name){setErr('f-name','e-name',true);ok=false;}else setErr('f-name','e-name',false);
+  if(!/^[+]?[\d\s-]{10,15}$/.test(phone)){setErr('f-phone','e-phone',true);ok=false;}else setErr('f-phone','e-phone',false);
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){setErr('f-email','e-email',true);ok=false;}else setErr('f-email','e-email',false);
+  if(ok){
+    const okMsg=document.getElementById('formOk');okMsg.classList.add('show');
+    ['f-name','f-phone','f-email','f-req','f-loc','f-budget','f-msg'].forEach(i=>document.getElementById(i).value='');
+    okMsg.scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});
+    setTimeout(()=>okMsg.classList.remove('show'),6000);
+  }
+});
+
+/* ---------- Login (front-end demo) ---------- */
+document.getElementById('loginBtn').addEventListener('click',()=>{
+  const e=document.getElementById('l-email').value.trim();
+  const btn=document.getElementById('loginBtn');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){document.getElementById('l-email').focus();document.getElementById('l-email').style.borderColor='#f87171';return;}
+  btn.textContent='Signing in…';
+  setTimeout(()=>{btn.textContent='Demo only — connect a backend to enable sign-in';setTimeout(()=>btn.textContent='Login',2600);},800);
+});
+</script>
+</body>
+</html>
